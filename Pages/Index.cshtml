@@ -1,0 +1,28 @@
+﻿@page
+@model RazorPages25P3A.Pages.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>@Model.Message</h2>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="text-danger">@Model.ErrorMessage</div>
+}
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div>
+        <label asp-for="Form.Email"></label>
+        <input asp-for="Form.Email" />
+        <span asp-validation-for="Form.Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Form.Password"></label>
+        <input asp-for="Form.Password" />
+        <span asp-validation-for="Form.Password" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>

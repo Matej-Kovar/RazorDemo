@@ -1,0 +1,35 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+@if (Model.Entries != null && Model.Entries.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var e in Model.Entries)
+        {
+            <tr>
+                <td>@e.FormModelId</td>
+                <td>@e.Email</td>
+                <td>@e.Password</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No entries found.</p>
+}
