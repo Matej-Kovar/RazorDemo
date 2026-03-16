@@ -15,7 +15,7 @@ namespace RazorPages25P3A.Pages
         }
 
         [BindProperty]
-        public FormIM Form { get; set; } = new FormIM();
+        public LoginModelWTF Form { get; set; } = new LoginModelWTF();
         public string Message { get; set; } = "Hello, World!";
         public string? ErrorMessage { get; set; }
 
@@ -34,7 +34,7 @@ namespace RazorPages25P3A.Pages
 
             try
             {
-                FormModel? result = _db.FormModels.Where(f => f.Email == Form.Email).SingleOrDefault();
+                LargerUser? result = _db.Users.Where(f => f.Email == Form.Email).SingleOrDefault();
                 if(result is not null)
                 {
                     ErrorMessage = "Account with this email already exists";
@@ -47,15 +47,15 @@ namespace RazorPages25P3A.Pages
                 return Page();
             }
 
-            var model = new FormModel
+            var model = new LargerUser
             {
                 Email = Form.Email ?? string.Empty,
-                Password = Form.Password ?? string.Empty
+                PasswordHash = Form.Password ?? string.Empty
             };
 
             try
             {
-                _db.FormModels.Add(model);
+                _db.Users.Add(model);
                 await _db.SaveChangesAsync();
 
                 Message = "Saved successfully.";

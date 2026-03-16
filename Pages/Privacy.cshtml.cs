@@ -15,11 +15,11 @@ namespace RazorPages25P3A.Pages
             _db = db;
         }
 
-        public List<FormModel> Entries { get; set; } = new List<FormModel>();
+        public List<LargerUser> Entries { get; set; } = new List<LargerUser>();
 
         public async Task OnGetAsync()
         {
-            Entries = await _db.FormModels.AsNoTracking().ToListAsync();
+            Entries = await _db.Users.AsNoTracking().ToListAsync();
         }
     }
 

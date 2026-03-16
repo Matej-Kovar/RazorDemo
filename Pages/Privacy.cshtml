@@ -21,9 +21,9 @@
         @foreach (var e in Model.Entries)
         {
             <tr>
-                <td>@e.FormModelId</td>
+                <td>@e.Id</td>
                 <td>@e.Email</td>
-                <td>@e.Password</td>
+                <td>@e.PasswordHash</td>
             </tr>
         }
         </tbody>
