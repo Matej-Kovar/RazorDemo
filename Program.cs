@@ -29,7 +29,9 @@ namespace RazorPages25P3A
                     options.Password.RequireUppercase = false;
                     options.Password.RequiredLength = 3;
                 }
-                ).AddEntityFrameworkStores<AppDbContext>();
+                )
+                .AddRoles<IdentityRole>() // <--- ADD THIS LINE HERE
+                .AddEntityFrameworkStores<AppDbContext>();
 
             var app = builder.Build();
 
@@ -45,6 +47,7 @@ namespace RazorPages25P3A
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapStaticAssets();

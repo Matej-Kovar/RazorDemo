@@ -22,6 +22,12 @@
         {
             <tr>
                 <td>@e.Id</td>
+                    <td>
+                        @if (Model.UserRoles.ContainsKey(e.Id))
+                        {
+                            @string.Join(", ", Model.UserRoles[e.Id])
+                        }
+                    </td>
                 <td>@e.Email</td>
                 <td>@e.PasswordHash</td>
             </tr>

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RazorPages25P3A.Data;
 
@@ -10,9 +11,11 @@ using RazorPages25P3A.Data;
 namespace RazorPages25P3A.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260323130932_ahoj2")]
+    partial class ahoj2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.13");
@@ -225,17 +228,17 @@ namespace RazorPages25P3A.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1b02e3d9-c6aa-44df-9182-bebeb240d69c",
+                            ConcurrencyStamp = "7e83db0a-9d17-4806-97db-1a75a30f114b",
                             Email = "a@b.c",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "A@B.C",
-                            NormalizedUserName = "A@B.C",
-                            PasswordHash = "AQAAAAIAAYagAAAAEARDV/JhVEdWagEwdQh690q8CsTUjYGvAARRI6q0oCNFEpO+Ye+sIZgv6jtERd9zMw==",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIsl7p1YFKZDZnGS5G+Y1vPifQ9UmAFIOdcGMeVYN2BsByrwuTucElf2SuyQFj7V3A==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "f3a10c88-5675-4863-8baa-5d90fe9b2828",
                             TwoFactorEnabled = false,
-                            UserName = "a@b.c"
+                            UserName = "admin"
                         });
                 });
 

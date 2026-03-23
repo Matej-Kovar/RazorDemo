@@ -11,8 +11,8 @@ using RazorPages25P3A.Data;
 namespace RazorPages25P3A.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260316130204_idk")]
-    partial class idk
+    [Migration("20260323130505_ahoj")]
+    partial class ahoj
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,6 +44,14 @@ namespace RazorPages25P3A.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -214,6 +222,24 @@ namespace RazorPages25P3A.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "b21da04f-785c-42d6-b806-64dd56660bca",
+                            Email = "a@b.c",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "A@B.C",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDb3/0jluAsRCgBH5G+C3Qzdu5/6056r5OcO6bk6xan2htrMvLi0Q1DBnoJEZOoHjg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "f3a10c88-5675-4863-8baa-5d90fe9b2828",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
